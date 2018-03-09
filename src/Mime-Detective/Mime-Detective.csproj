@@ -19,7 +19,7 @@
 	<AssemblyVersion>0.0.6.0</AssemblyVersion>
 	<FileVersion>0.0.6.0</FileVersion>
 	<PackageReleaseNotes>fixed handling of small files</PackageReleaseNotes>
-	<Version>0.0.6.0-alpha1</Version>
+	<Version>0.0.6.0-alpha2</Version>
 	<DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
   </PropertyGroup>
 
