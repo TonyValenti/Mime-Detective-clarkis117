@@ -25,6 +25,9 @@ namespace MimeDetective.Analyzers
         /// <param name="types"></param>
         public DictionaryBasedTrie(IEnumerable<FileType> types)
         {
+            if (types is null)
+                throw new ArgumentNullException(nameof(types));
+
             foreach (var type in types)
             {
                 Insert(type);

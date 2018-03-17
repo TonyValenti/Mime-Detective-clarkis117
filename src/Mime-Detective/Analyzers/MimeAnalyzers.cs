@@ -1,4 +1,5 @@
-﻿using MimeDetective.Analyzers;
+﻿using System;
+using MimeDetective.Analyzers;
 using System.Collections.Generic;
 
 namespace MimeDetective
@@ -8,10 +9,26 @@ namespace MimeDetective
     /// </summary>
     public static class MimeAnalyzers
     {
+        private static IFileAnalyzer primaryAnalyzer = new DictionaryBasedTrie(MimeTypes.Types);
+
         /// <summary>
         ///
         /// </summary>
-        public static IFileAnalyzer PrimaryAnalyzer { get; set; }
+        public static IFileAnalyzer PrimaryAnalyzer
+        {
+            get
+            {
+                return primaryAnalyzer;
+            }
+
+            set
+            {
+                if (value is null)
+                    throw new ArgumentNullException(nameof(value));
+
+                primaryAnalyzer = value;
+            }
+        }
 
         //secondary headers should go here
         //special handling cases go here
@@ -19,7 +36,6 @@ namespace MimeDetective
 
         static MimeAnalyzers()
         {
-            PrimaryAnalyzer = new DictionaryBasedTrie(MimeTypes.Types);
             SecondaryAnalyzers.Add(MimeTypes.ZIP, new ZipFileAnalyzer());
             SecondaryAnalyzers.Add(MimeTypes.MS_OFFICE, new MsOfficeAnalyzer());
         }

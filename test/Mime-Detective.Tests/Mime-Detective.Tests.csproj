@@ -10,6 +10,7 @@
 	<GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
 	<GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
 	<LangVersion>latest</LangVersion>
+	<RootNamespace>MimeDetective</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

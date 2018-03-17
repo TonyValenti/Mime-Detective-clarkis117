@@ -9,6 +9,14 @@ namespace MimeDetective.Analyzers
         private readonly List<FileType> types;
 
         /// <summary>
+        /// Constructs an empty LinearCountingAnalyzer, use <see cref="Insert(FileType)"/> to add file types
+        /// </summary>
+        public LinearCountingAnalyzer()
+        {
+            types = new List<FileType>();
+        }
+
+        /// <summary>
         /// Constructs a LinearCountingAnalyzer using the supplied IEnumerable<FileType>
         /// </summary>
         /// <param name="fileTypes"></param>
