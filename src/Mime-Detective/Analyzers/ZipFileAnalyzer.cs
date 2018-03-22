@@ -24,7 +24,8 @@ namespace MimeDetective.Analyzers
 
             if (readResult.Source is null)
             {
-                mStream = new MemoryStream(readResult.Array, 0, readResult.ReadLength);
+                //this should be the length of the array passed via ReadResult
+                mStream = new MemoryStream(readResult.Array, 0, readResult.Array.Length);
                 locallyCreatedStream = true;
             }
             else

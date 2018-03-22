@@ -345,5 +345,14 @@ namespace MimeDetective.Tests
 
             fileStream.Dispose();
         }
+
+        [Fact]
+        public void CanReadZipFileFromByteArray()
+        {
+            var result = File.ReadAllBytes("./data/Documents/test.xlsx").GetFileType();
+
+            Assert.NotNull(result);
+            Assert.Equal(MimeTypes.EXCELX, result);
+        }
     }
 }

@@ -14,8 +14,17 @@ namespace MimeDetective
     /// </summary>
     public readonly struct ReadResult : IDisposable
     {
+        /// <summary>
+        /// Use Array.Length instead of ReadLength when you are refering to the whole file and source is null
+        /// </summary>
         public readonly byte[] Array;
+
         public readonly Stream Source;
+
+        /// <summary>
+        /// This is meant to be the int result of Stream.Read, it should cap at 560
+        /// Do not use when referring to the whole file
+        /// </summary>
         public readonly int ReadLength;
 
         public bool IsArrayRented { get; }
