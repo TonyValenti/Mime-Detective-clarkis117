@@ -1,6 +1,8 @@
 # Mime-Detective  [![Build status](https://ci.appveyor.com/api/projects/status/38ve0bl4kvme82gw?svg=true)](https://ci.appveyor.com/project/clarkis117/mime-detective)  [![codecov](https://codecov.io/gh/clarkis117/Mime-Detective/branch/master/graph/badge.svg)](https://codecov.io/gh/clarkis117/Mime-Detective)  [![NuGet](http://img.shields.io/nuget/v/Mime-Detective.svg?style=flat)](https://www.nuget.org/packages/Mime-Detective/)
 
-Mime type for files.
+Detect MIME type from files.
+
+NuGet package: [Mime-Detective](https://www.nuget.org/packages/Mime-Detective)
 
 Based on https://filetypedetective.codeplex.com/
 
