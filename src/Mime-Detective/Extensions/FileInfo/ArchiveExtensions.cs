@@ -14,7 +14,7 @@ namespace MimeDetective
         /// <returns>
         ///   <c>true</c> if the specified file info is zip; otherwise, <c>false</c>.
         /// </returns>
-        public static bool IsZip(this FileInfo fileInfo) => fileInfo.IsType(MimeTypes.ZIP);
+        public static bool IsZip(this FileInfo fileInfo) => fileInfo.IsType(MimeTypes.ZIP) || fileInfo.IsType(MimeTypes.ZIP_EMPTY);
 
         /// <summary>
         /// Determines whether the specified file is RAR-archive.

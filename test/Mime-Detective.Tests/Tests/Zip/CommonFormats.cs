@@ -24,6 +24,18 @@ namespace MimeDetective.Tests.Zip
             await AssertIsType(fileInfo, MimeTypes.ZIP);
         }
 
+        [Theory]
+        [InlineData("emptyZip")]
+        [InlineData("EmptiedBy7zip")]
+        public async Task IsEmptyZip(string file)
+        {
+            var fileInfo = GetFileInfo(dataPath, file, ".zip");
+
+            Assert.True(fileInfo.IsZip());
+
+            await AssertIsType(fileInfo, MimeTypes.ZIP_EMPTY);
+        }
+
         [Fact]
         public async Task Is7zip()
         {
