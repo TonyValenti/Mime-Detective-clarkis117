@@ -27,6 +27,8 @@ namespace MimeDetective.Tests.Analyzers
         [InlineData("./Data/Documents/DocxWord2016.docx", "docx")]
         [InlineData("./Data/Zip/Images.zip", "zip")]
         [InlineData("./Data/Zip/ImagesBy7zip.zip", "zip")]
+        [InlineData("./Data/Zip/EmptiedBy7zip.zip", "zip")]
+        [InlineData("./Data/Zip/emptyZip.zip", "zip")]
         public async Task Search(string path, string ext)
         {
             var analyzer = new ZipFileAnalyzer();

@@ -162,6 +162,7 @@ namespace MimeDetective
         public readonly static FileType ZIP_7z = new FileType(new byte?[] { 0x37, 0x7A, 0xBC, 0xAF, 0x27, 0x1C }, "7z", "application/x-compressed");
 
         public readonly static FileType ZIP = new FileType(new byte?[] { 0x50, 0x4B, 0x03, 0x04 }, "zip", "application/x-compressed");
+        public readonly static FileType ZIP_EMPTY = new FileType(new byte?[] { 0x50, 0x4B, 0x05, 0x06 }, "zip", "application/x-compressed");
         public readonly static FileType RAR = new FileType(new byte?[] { 0x52, 0x61, 0x72, 0x21 }, "rar", "application/x-compressed");
         public readonly static FileType DLL_EXE = new FileType(new byte?[] { 0x4D, 0x5A }, "dll,exe", "application/octet-stream");
 
@@ -222,7 +223,7 @@ namespace MimeDetective
         //EVTX	 	Windows Vista event log file
         public readonly static FileType ELF = new FileType(new byte?[] { 0x45, 0x6C, 0x66, 0x46, 0x69, 0x6C, 0x65, 0x00 }, "elf", "text/plain");
 
-        public static readonly FileType[] Types = new FileType[] { PDF, JPEG, ZIP, RAR, RTF, PNG, GIF, DLL_EXE, MS_OFFICE,
+        public static readonly FileType[] Types = new FileType[] { PDF, JPEG, ZIP, ZIP_EMPTY, RAR, RTF, PNG, GIF, DLL_EXE, MS_OFFICE,
                 BMP, DLL_EXE, ZIP_7z, GZ_TGZ, TAR_ZH, TAR_ZV, OGG, ICO, XML, XML_NoBom, XML_Utf8Bom, XML_UCS2BE, XML_UCS2LE, DWG, LIB_COFF, PST, PSD, BZ2,
                 AES, SKR, SKR_2, PKR, EML_FROM, ELF, TXT_UTF8, TXT_UTF16_BE, TXT_UTF16_LE, TXT_UTF32_BE, TXT_UTF32_LE,
                 Mp3ID3, Wav, Flac, MIDI,
