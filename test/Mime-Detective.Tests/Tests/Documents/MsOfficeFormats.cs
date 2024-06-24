@@ -137,5 +137,13 @@ namespace MimeDetective.Tests.Documents
 
             await AssertIsType(info, MimeTypes.EXCELX);
         }
+
+        [Theory]
+        [InlineData("Message.msg")]
+        public async Task IsMSG(string fileName)
+        {
+            var info = GetFileInfo(DocsPath, fileName);
+            await AssertIsType(info, MimeTypes.OUTLOOK_MSG);
+        }
     }
 }

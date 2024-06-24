@@ -4,6 +4,10 @@ namespace MimeDetective
 {
     public static class ByteArrayExtensions
     {
+
+        public readonly static byte?[] EmptyHeader = new byte?[0];
+        public readonly static FileType TXT = new FileType(EmptyHeader, "txt", "text/plain");
+
         /// <summary>
         /// Read header of bytes and depending on the information in the header
         /// return object FileType.
@@ -17,7 +21,12 @@ namespace MimeDetective
             int min = bytes.Length > MimeTypes.MaxHeaderSize ? MimeTypes.MaxHeaderSize : bytes.Length;
             using (ReadResult readResult = new ReadResult(bytes, min))
             {
-                return MimeAnalyzers.GetFileType(in readResult);
+
+                var mimeType = MimeAnalyzers.GetFileType(in readResult);
+
+                if (mimeType == null)
+                    return TXT;
+                return mimeType;
             }
         }
     }

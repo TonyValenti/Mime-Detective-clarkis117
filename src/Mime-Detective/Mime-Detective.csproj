@@ -3,22 +3,23 @@
   <PropertyGroup>
 	<Description>Detect MIME type from files.</Description>
 	<AssemblyTitle>Mime-Detective</AssemblyTitle>
-	<Authors>Joshua Clark</Authors>
+	<Authors>Matheus Ortiz</Authors>
 	<TargetFrameworks>netstandard1.3;net45;netstandard2.0</TargetFrameworks>
 	<AssemblyName>Mime-Detective</AssemblyName>
-	<PackageId>Mime-Detective</PackageId>
+	<PackageId>Mime-Detective-MO</PackageId>
 	<PackageTags>mime, mime detective, file types</PackageTags>
 	<LangVersion>latest</LangVersion>
-	<PackageProjectUrl>https://github.com/clarkis117/Mime-Detective</PackageProjectUrl>
-	<PackageLicenseUrl>https://github.com/clarkis117/Mime-Detective/blob/master/LICENSE</PackageLicenseUrl>
+	<PackageProjectUrl>https://github.com/matheusz2/Mime-Detective-MO</PackageProjectUrl>
+	<PackageLicenseUrl></PackageLicenseUrl>
 	<RepositoryType>git</RepositoryType>
-	<RepositoryUrl>https://github.com/clarkis117/Mime-Detective.git</RepositoryUrl>
+	<RepositoryUrl>https://github.com/matheusz2/Mime-Detective-MO.git</RepositoryUrl>
 	<AssemblyVersion>0.0.6.0</AssemblyVersion>
 	<FileVersion>0.0.6.0</FileVersion>
-	<PackageReleaseNotes>See beta5 PR</PackageReleaseNotes>
-	<Version>0.0.6.0-beta5</Version>
+	<PackageReleaseNotes>See beta10 PR</PackageReleaseNotes>
+	<Version>0.0.6.0-beta10-mo</Version>
     <!--Needed to allow usage of fixed sized buffers-->
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net45'">
@@ -31,6 +32,13 @@
         
   <ItemGroup>
 	<PackageReference Include="System.Buffers" Version="4.*" />
+  </ItemGroup>
+        
+  <ItemGroup>
+    <None Include="..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

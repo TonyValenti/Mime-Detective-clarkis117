@@ -55,11 +55,13 @@ namespace MimeDetective
 
         public readonly static FileType PDF = new FileType(new byte?[] { 0x25, 0x50, 0x44, 0x46 }, "pdf", "application/pdf");
 
+        //application/vnd.ms-outlook
+        public readonly static FileType OUTLOOK_MSG = new FileType(new byte?[] { 0xD0, 0xCF, 0x11, 0xE0, 0xA1, 0xB1, 0x1A, 0xE1 }, "msg", "application/vnd.ms-outlook");
+
         //todo place holder extension
         public readonly static FileType MS_OFFICE = new FileType(new byte?[] { 0xD0, 0xCF, 0x11, 0xE0, 0xA1, 0xB1, 0x1A, 0xE1 }, "doc,ppt,xls", "application/octet-stream");
-
+        
         //application/xml text/xml
-        //                                                               r     s     i     o     n     =     "     1     .     0     "     ?     >
         public readonly static FileType XML = new FileType(new byte?[] { 0x72, 0x73, 0x69, 0x6F, 0x6E, 0x3D, 0x22, 0x31, 0x2E, 0x30, 0x22, 0x3F, 0x3E }, "xml", "text/xml");
 
         // XML file encoded with UTF-8                                    <     ?     x     m     l     (spc)
@@ -223,7 +225,7 @@ namespace MimeDetective
         //EVTX	 	Windows Vista event log file
         public readonly static FileType ELF = new FileType(new byte?[] { 0x45, 0x6C, 0x66, 0x46, 0x69, 0x6C, 0x65, 0x00 }, "elf", "text/plain");
 
-        public static readonly FileType[] Types = new FileType[] { PDF, JPEG, ZIP, ZIP_EMPTY, RAR, RTF, PNG, GIF, DLL_EXE, MS_OFFICE,
+        public static readonly FileType[] Types = new FileType[] { PDF, JPEG, ZIP, ZIP_EMPTY, RAR, RTF, PNG, GIF, DLL_EXE, MS_OFFICE, OUTLOOK_MSG,
                 BMP, DLL_EXE, ZIP_7z, GZ_TGZ, TAR_ZH, TAR_ZV, OGG, ICO, XML, XML_NoBom, XML_Utf8Bom, XML_UCS2BE, XML_UCS2LE, DWG, LIB_COFF, PST, PSD, BZ2,
                 AES, SKR, SKR_2, PKR, EML_FROM, ELF, TXT_UTF8, TXT_UTF16_BE, TXT_UTF16_LE, TXT_UTF32_BE, TXT_UTF32_LE,
                 Mp3ID3, Wav, Flac, MIDI,

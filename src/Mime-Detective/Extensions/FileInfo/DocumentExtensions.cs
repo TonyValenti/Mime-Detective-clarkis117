@@ -70,5 +70,7 @@ namespace MimeDetective
 
             return (fileType == MimeTypes.EXCEL) || (fileType == MimeTypes.EXCELX) || (fileType == MimeTypes.MS_OFFICE);
         }
+
+        public static bool IsOutlookMSG(this FileInfo file) => file.IsType(MimeTypes.OUTLOOK_MSG);
     }
 }
